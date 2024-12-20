@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" />
+    <title>Element Plus with Vue 3</title>
+    <link rel="stylesheet" href="./index.css"/>
+</head>
+<body>
+    <div id="app">
+        <el-container>
+            <el-header> 
+                <el-row><el-col :span="24" style="background-color: bisque;">dd0</el-col></el-row>
+            </el-header>
+            <el-main>
+                <el-row :gutter="40">
+                    <el-col :span="12" style="background-color: aqua;">r</el-col>
+                    <el-col :span="12" style="background-color: aquamarine;">d</el-col>
+                  </el-row>
+                  <el-date-picker 
+                  v-model="selectedDate" 
+                  type="date" 
+                  placeholder="Pick a date">
+              </el-date-picker>
+              <p>Selected Date: {{ selectedDate }}</p>
+            </el-main>
+            <el-footer>Footer</el-footer>
+          </el-container>
+    </div>
+
+    <script src="//cdn.jsdelivr.net/npm/vue@3"></script>
+    <script src="//cdn.jsdelivr.net/npm/element-plus"></script>
+    <script>
+       const app = Vue.createApp({
+            data() {
+                return {
+                    selectedDate: null // Initialize selectedDate as null
+                };
+            }
+        });
+        app.use(ElementPlus);
+        app.mount("#app");
+    </script>
+</body>
+</html>
