@@ -8,11 +8,11 @@
     <script>
         $(document).ready(function(){
             $("button").click(function(){
-                $("#div1").fadeIn();
-                $("#div2").fadeIn("slow");
-                $("#div3").fadeIn(6000);
-                $("#div4").fadeIn("fast");
-                $("#div5").fadeIn();
+                $("#div1").fadeToggle();
+                $("#div2").fadeToggle("slow");
+                $("#div3").fadeToggle(4000);
+                $("#div4").fadeToggle("fast");
+                $("#div5").fadeToggle();
             })
         });
     </script>
@@ -21,7 +21,6 @@
             width: 100px;
             height: 100px;
             border: 2px solid yellow;
-            display: none;
         }
         #div1{
             background-color: red;
