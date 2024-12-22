@@ -10,7 +10,12 @@ const application = new Vue({
         rules: {
           email: [
             { required: true, message: 'Please input the email address', trigger: 'blur' },
-            { type: 'email', message: 'Please input a valid email address', trigger: ['blur', 'change'] }
+            { type: 'email', message: 'Please input a valid email address', trigger: ['blur', 'change'] },
+            { 
+                pattern: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/, 
+                message: 'Please input a valid email address', 
+                trigger: ['blur', 'change']
+              }
           ],
           amount: [
             { required: true, message: 'Please input the amount', trigger: 'blur' },
