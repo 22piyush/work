@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+    <div id="app">
+
+        <h3>{{appName}}</h3>
+        <input type="text" v-model="appName"/>
+
+      <h3 v-if="!empty">CART</h3>
+      <h3 v-if="empty">CART is Empty</h3>
+      <ul>
+        <li v-for="item in cart">
+            {{item.name}} : {{item.price}}
+            <button @click="remove">Remove</button>
+        </li>
+      </ul>
+    </div>
+
+    <script src="./watch.js"></script>
+    
+</body>
+</html>
