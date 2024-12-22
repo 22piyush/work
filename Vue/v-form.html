@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    
+    <div id="app">
+
+        <form>
+            <input type="text" v-model="name"/>
+            {{name}}
+            <input type="password" v-model="name"/>
+            <br/>
+
+            <input type="checkbox" v-model="agree"/> Agree ?
+
+            <button v-if="agree">Submit</button>
+         
+           <br/>
+
+           <input type="checkbox" v-model="fruits" value="apple"/>
+           Apple
+           <input type="checkbox" v-model="fruits" value="pear"/>
+           Pear
+           <input type="checkbox" v-model="fruits" value="banana"/>
+           Banana
+
+           <br>
+           <ul>
+
+            <li v-for="item in fruits">
+               {{item}}
+            </li>
+
+           </ul>
+
+           <br/>
+
+           <select v-model="country">
+              <option value="IN">India</option>
+              <option value="UK">UK</option>
+              <option value="US">US</option>
+           </select>
+
+           <h3>{{country}}</h3>
+
+
+           
+           <select v-model="travelDest" multiple>
+            <option value="IN">India</option>
+            <option value="UK">UK</option>
+            <option value="US">US</option>
+         </select>
+
+         <h3>{{travelDest}}</h3>
+
+
+
+        </form>
+        
+
+    </div>
+
+    
+    <script src="./v-form.js"></script>
+</body>
+</html>
